@@ -1,0 +1,734 @@
+
+/* =================================
+   BUSGO - PROFESSIONAL WEBSITE
+================================= */
+
+/* 1. GLOBAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: #f5f7fb;
+    color: #172b4d;
+    line-height: 1.6;
+}
+
+:root {
+    --primary: #102a43;
+    --secondary: #ff9f43;
+    --white: #ffffff;
+    --light: #f5f7fb;
+    --text: #526174;
+    --shadow: 0 8px 25px rgba(16, 42, 67, 0.09);
+}
+
+button,
+a,
+select,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* 2. NAVIGATION BAR */
+
+.navbar {
+    width: 100%;
+    min-height: 80px;
+    padding: 15px 8%;
+    background: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--secondary);
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--secondary);
+}
+
+.nav-btn {
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 11px 23px;
+    border-radius: 7px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+
+
+/* 3. HERO SECTION */
+
+.hero {
+    min-height: 540px;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(9, 30, 50, 0.94),
+            rgba(16, 42, 67, 0.65)
+        ),
+        url("https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=1600")
+        center/cover no-repeat;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.tagline {
+    display: inline-block;
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 22px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--secondary);
+}
+
+.hero-content p {
+    color: #e3eaf2;
+    font-size: 18px;
+    max-width: 520px;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--primary);
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+
+/* 4. BOOKING SECTION */
+
+.booking-section {
+    padding: 0 8%;
+    margin-top: -65px;
+    position: relative;
+    z-index: 2;
+}
+
+.booking-box {
+    max-width: 1150px;
+    margin: auto;
+    padding: 35px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+.booking-box h2 {
+    color: var(--primary);
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+.booking-box > p {
+    color: var(--text);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    border: 1px solid #dce3ec;
+    border-radius: 8px;
+    background: #ffffff;
+    outline: none;
+    color: #34495e;
+    transition: 0.3s;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(255, 159, 67, 0.15);
+}
+
+.booking-box button,
+.seat-section > button {
+    background: var(--secondary);
+    color: var(--primary);
+    border: none;
+    padding: 14px 30px;
+    margin-top: 25px;
+    border-radius: 8px;
+    font-weight: 800;
+}
+
+.booking-box button:hover,
+.seat-section > button:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+#message {
+    color: #d35400;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+
+/* 5. AVAILABLE BUSES */
+
+.buses {
+    padding: 90px 8% 60px;
+    text-align: center;
+}
+
+.buses h2,
+.routes h2,
+.about h2 {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.buses > p {
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+#bus-list {
+    margin-top: 25px;
+}
+
+.bus-card {
+    max-width: 750px;
+    margin: 20px auto;
+    padding: 28px;
+    background: white;
+    border-radius: 13px;
+    box-shadow: var(--shadow);
+    text-align: left;
+    border-left: 5px solid var(--secondary);
+    transition: 0.3s;
+}
+
+.bus-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(16, 42, 67, 0.14);
+}
+
+.bus-card h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.bus-card p {
+    color: var(--text);
+    margin: 7px 0;
+}
+
+.bus-card button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 23px;
+    border-radius: 7px;
+    margin-top: 15px;
+}
+
+.bus-card button:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+
+/* 6. POPULAR ROUTES */
+
+.routes {
+    padding: 65px 8%;
+    text-align: center;
+    background: white;
+}
+
+.route-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.route-card {
+    padding: 30px 20px;
+    border-radius: 12px;
+    background: var(--light);
+    border: 1px solid #e7edf4;
+    transition: 0.3s;
+}
+
+.route-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    border-color: var(--secondary);
+}
+
+.route-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.route-card p {
+    color: var(--text);
+}
+
+
+/* 7. SEAT SELECTION */
+
+.seat-section {
+    display: none;
+    background: white;
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.seat-section h2 {
+    color: var(--primary);
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.seat-section > p {
+    color: var(--text);
+}
+
+.seat-info {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.bus-layout {
+    max-width: 350px;
+    margin: auto;
+    background: var(--light);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.driver {
+    text-align: right;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #aaa;
+}
+
+.seat-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.seat {
+    background: #d5f5e3;
+    padding: 13px 5px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.seat:hover {
+    background: #a9dfbf;
+    transform: scale(1.05);
+}
+
+.seat.selected {
+    background: var(--secondary);
+    color: white;
+}
+
+.seat.booked {
+    background: #555;
+    color: white;
+    cursor: not-allowed;
+}
+
+#selected-seats,
+#total-price {
+    margin-top: 20px;
+    color: var(--primary);
+}
+
+
+/* 8. ABOUT AND FEATURES */
+
+.about {
+    background: var(--light);
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 35px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: var(--text);
+}
+
+
+/* 9. FOOTER */
+
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer h2 {
+    color: var(--secondary);
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+footer p {
+    margin: 7px 0;
+    color: #dce6f1;
+}
+
+
+/* 10. RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 15px 4%;
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 80px 5%;
+    }
+
+    .booking-section {
+        padding: 0 5%;
+    }
+
+    .route-container,
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 17px;
+    }
+
+    .navbar nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .navbar nav a {
+        font-size: 13px;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .hero {
+        min-height: 450px;
+        padding: 65px 6%;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+    .booking-section {
+        margin-top: -35px;
+        padding: 0 15px;
+    }
+
+    .booking-box {
+        padding: 23px 18px;
+    }
+
+    .booking-box h2 {
+        font-size: 23px;
+    }
+
+    .form-group {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .booking-box button {
+        width: 100%;
+    }
+
+    .buses,
+    .routes,
+    .about {
+        padding: 50px 18px;
+    }
+
+    .buses h2,
+    .routes h2,
+    .about h2 {
+        font-size: 27px;
+    }
+
+    .route-container,
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .bus-card {
+        padding: 20px;
+    }
+
+    .seat-container {
+        gap: 8px;
+    }
+
+    .seat {
+        padding: 12px 4px;
+    }
+}
+
+/* SORT BUS OPTIONS */
+
+.sort-box {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sort-box select {
+    padding: 10px;
+    border: 1px solid #dce3ec;
+    border-radius: 7px;
+}
+
+
+/* PASSENGER FORM */
+
+.passenger-section {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #f5f7fb;
+    border-radius: 14px;
+    text-align: left;
+}
+
+.passenger-section h2 {
+    color: #102a43;
+    margin-bottom: 12px;
+}
+
+.passenger-section label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.passenger-section input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #dce3ec;
+    border-radius: 7px;
+}
+
+.passenger-section button {
+    width: 100%;
+    background: #ff9f43;
+    color: #102a43;
+    border: none;
+    padding: 13px;
+    margin-top: 20px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+
+/* DIGITAL TICKET */
+
+.ticket-details {
+    background: white;
+    padding: 25px;
+    border: 2px dashed #ff9f43;
+    border-radius: 12px;
+    overflow-wrap: anywhere;
+}
+
+.ticket-details h2 {
+    text-align: center;
+    color: #102a43;
+    margin-bottom: 15px;
+}
+
+.ticket-details p {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.ticket-details button {
+    width: 100%;
+    padding: 12px;
+    background: #102a43;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #ticket-details,
+    #ticket-details * {
+        visibility: visible;
+    }
+
+    #ticket-details {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    #ticket-details button {
+        display: none;
+    }
+}

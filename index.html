@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BusGo | Online Bus Booking</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+
+        <div class="logo">Bus<span>Go.</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#booking">Book Tickets</a>
+            <a href="#routes">Popular Routes</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <a href="#booking" class="nav-btn">Book Now</a>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <span class="tagline">YOUR JOURNEY STARTS HERE</span>
+
+            <h1>
+                Travel More.<br>
+                Explore More.
+                <span>With BusGo.</span>
+            </h1>
+
+            <p>
+                Discover comfortable journeys, compare buses
+                and book your next trip with ease.
+            </p>
+
+            <a href="#booking" class="hero-btn">
+                Explore Buses →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING SECTION -->
+    <section class="booking-section" id="booking">
+
+        <div class="booking-box">
+
+            <h2>Find Your Perfect Bus</h2>
+
+            <p>Choose your destination and start your journey.</p>
+
+            <div class="form-group">
+
+                <div>
+                    <label>From</label>
+
+                    <select id="from">
+                        <option value="">Select City</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Goa">Goa</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>To</label>
+
+                    <select id="to">
+                        <option value="">Select City</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Goa">Goa</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Journey Date</label>
+
+                    <input type="date" id="date">
+                </div>
+
+            </div>
+
+            <button onclick="searchBuses()">
+                Search Buses →
+            </button>
+
+            <p id="message"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- AVAILABLE BUSES -->
+    <section class="buses" id="results">
+
+        <h2>Available Buses</h2>
+
+        <p>Find your preferred bus for your journey.</p>
+
+        <div id="bus-list">
+            <p>Search your journey to see available buses.</p>
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR ROUTES -->
+    <section class="routes" id="routes">
+
+        <h2>Popular Routes</h2>
+
+        <div class="route-container">
+
+            <div class="route-card">
+                <h3>Hyderabad → Bangalore</h3>
+                <p>Explore the technology capital.</p>
+            </div>
+
+            <div class="route-card">
+                <h3>Hyderabad → Chennai</h3>
+                <p>Enjoy your next journey.</p>
+            </div>
+
+            <div class="route-card">
+                <h3>Mumbai → Hyderabad</h3>
+                <p>Travel comfortably with BusGo.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEAT SELECTION -->
+    <section class="seat-section" id="seat-section">
+
+        <h2>Select Your Seats</h2>
+
+        <p>Choose your preferred seats below.</p>
+
+        <div class="seat-info">
+            <span>🟩 Available</span>
+            <span>🟧 Selected</span>
+            <span>⬛ Booked</span>
+        </div>
+
+        <div class="bus-layout">
+
+            <div class="driver">🚍 Driver</div>
+
+            <div id="seat-container" class="seat-container">
+            </div>
+
+        </div>
+
+        <h3 id="selected-seats">Selected Seats: None</h3>
+
+        <h3 id="total-price">Total Price: ₹0</h3>
+
+        <button onclick="confirmBooking()">
+            Confirm Booking
+        </button>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2>Why Choose BusGo?</h2>
+
+        <div class="features">
+
+            <div class="feature-card">
+                <h3>🚌 Easy Booking</h3>
+                <p>Search buses and select seats easily.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💺 Seat Selection</h3>
+                <p>Choose your preferred available seats.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>💰 Price Calculation</h3>
+                <p>View your total ticket price instantly.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>BusGo.</h2>
+
+        <p>Your journey, our priority.</p>
+
+        <p>© 2026 BusGo. All Rights Reserved.</p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
